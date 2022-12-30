@@ -2,6 +2,7 @@ REM TITLE Alias brainfuck
 REM AUTHOR Saverio976
 REM DESCRIPTION messed up with alias
 
+DELAY 3000
 STRINGLN : : : : : : : : : : : : : : : : : : : : : : :
 STRINGLN [[ "$SHELL" == *"zsh"* ]] && zsh
 STRINGLN [[ "$SHELL" == *"bash"* ]] && bash
