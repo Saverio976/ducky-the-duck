@@ -14,6 +14,8 @@ function run_script() {
 
 SCRIPT=''
 while [ ! "$SCRIPT" = 'quit' ]; do
-    select SCRIPT in "${SCRIPTS[@]}"; do break; done
+    select SCRIPT in "${SCRIPTS[@]}"; do
+        break
+    done < /dev/tty
     run_script "$SCRIPT"
 done
