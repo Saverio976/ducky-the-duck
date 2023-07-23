@@ -6,6 +6,8 @@
 
 [Payload](https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/launch.txt) (generated from launch.sh)
 
+[![asciicast](https://asciinema.org/a/598625.svg)](https://asciinema.org/a/598625)
+
 - Bash
 
 ```bash
