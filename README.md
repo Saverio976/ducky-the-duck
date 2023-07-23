@@ -15,6 +15,10 @@
 curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/launch.sh' | bash
 ```
 
+## [Scripts selection info](./script/README.md)
+
+## [Extension info](./extension/README.md)
+
 ## Resources
 
 - https://docs.hak5.org/hak5-usb-rubber-ducky/ducky-script-basics/hello-world
