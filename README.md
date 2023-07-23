@@ -4,7 +4,7 @@
 
 - Rubber ducky
 
-[Payload](https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/launch.txt) (generated from launch.sh)
+[Payload launch.txt](./launch.txt) (generated from [launch.sh](./launch.sh))
 
 [![asciicast](https://asciinema.org/a/598625.svg)](https://asciinema.org/a/598625)
 
@@ -20,3 +20,7 @@ curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/laun
 - https://docs.hak5.org/hak5-usb-rubber-ducky/ducky-script-basics/hello-world
 
 - https://github.com/hak5/usbrubberducky-payloads
+
+# License
+
+[The Unlicense](./LICENSE)
