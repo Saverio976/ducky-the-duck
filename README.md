@@ -9,7 +9,8 @@
 - Bash
 
 ```bash
-curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/launch.sh' | "$CURRENT_SHELL"
+# curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/launch.sh' | "$(readlink /proc/$$/exe)"
+curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/launch.sh' | bash
 ```
 
 ## Resources
