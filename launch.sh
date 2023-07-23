@@ -7,6 +7,7 @@
 #!EXTENSION!detect_ready.txt
 
 #!DUCKY!$_JITTER_ENABLED = TRUE
+#!DUCKY!$_JITTER_MAX = 1
 
 export CURRENT_SHELL=''
 CURRENT_SHELL=$(readlink /proc/$$/exe)
