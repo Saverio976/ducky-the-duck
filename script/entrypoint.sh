@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_URL='https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/scripts/'
+BASE_URL='https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/'
 SCRIPTS=(
     'b-alias.sh'
     'g-info.sh'

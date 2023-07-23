@@ -18,7 +18,7 @@ STRINGLN export CONFIG_FILE
 STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
 STRINGLN [ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
 
-STRINGLN curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/scripts/entrypoint.sh' | "$CURRENT_SHELL"
+STRINGLN curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | "$CURRENT_SHELL"
 
 STRINGLN exit
 ATTACKMODE STORAGE
