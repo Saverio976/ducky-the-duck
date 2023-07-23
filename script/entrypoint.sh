@@ -8,7 +8,14 @@ RED='\e[31m'
 BASE_URL='https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/'
 SCRIPTS=(
     'b-alias.sh'
+    'b-editor.sh'
+    'b-epilepsi.sh'
+    'b-gcc.sh'
+    'b-slow.sh'
+    'b-vscode.sh'
     'g-info.sh'
+    'p-dotfile.sh'
+
     'quit'
 )
 

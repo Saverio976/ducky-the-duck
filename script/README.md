@@ -8,3 +8,4 @@
 
 3. Script name starting with 'b-' are bad/malicious
 4. Script name starting with 'g-' are good
+5. Script name starting with 'p-' are for personal use (me) => config or something like this
