@@ -13,7 +13,9 @@ unset HISTFILE
 
 export CURRENT_SHELL=''
 CURRENT_SHELL=$(readlink /proc/$$/exe)
-"$CURRENT_SHELL"
+
+$CURRENT_SHELL
+unset HISTFILE
 
 [[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
 [[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
