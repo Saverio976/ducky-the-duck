@@ -40,19 +40,19 @@ function info_kernel() {
 }
 
 function info_shell() {
-    if [ -z "$CURRENT_SHELL" ]; then
-        export CURRENT_SHELL=''
-        CURRENT_SHELL=$(readlink /proc/$$/exe)
-        [[ "$CURRENT_SHELL" == *"zsh"* ]] && CURRENT_SHELL="zsh"
-        [[ "$CURRENT_SHELL" == *"bash"* ]] && CURRENT_SHELL="bash"
+    if [ -z "$CURRENTSHELL" ]; then
+        export CURRENTSHELL=''
+        CURRENTSHELL=$(readlink /proc/$$/exe)
+        [[ "$CURRENTSHELL" == *"zsh"* ]] && CURRENTSHELL="zsh"
+        [[ "$CURRENTSHELL" == *"bash"* ]] && CURRENTSHELL="bash"
     fi
-    if [ -z "$CONFIG_FILE" ]; then
-        [ "$CURRENT_SHELL" = "zsh" ] && CONFIG_FILE="${ZDOTDIR:-$HOME}/.zshrc"
-        [ "$CURRENT_SHELL" = "bash" ] && CONFIG_FILE="$HOME/.bashrc"
+    if [ -z "$CONFIGFILE" ]; then
+        [ "$CURRENTSHELL" = "zsh" ] && CONFIGFILE="${ZDOTDIR:-$HOME}/.zshrc"
+        [ "$CURRENTSHELL" = "bash" ] && CONFIGFILE="$HOME/.bashrc"
     fi
     echo -e "${GREEN}- Shell:${NORMAL}"
-    echo "- - Program: $CURRENT_SHELL"
-    echo "- - Config File: ${CONFIG_FILE}"
+    echo "- - Program: $CURRENTSHELL"
+    echo "- - Config File: ${CONFIGFILE}"
 }
 
 function info_memory() {

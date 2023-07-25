@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ -z "$CONFIG_FILE" ]; then
+if [ -z "$CONFIGFILE" ]; then
     exit 1
 fi
 
-echo "echo 'sleep 0.1' >> $CONFIG_FILE" >> "$CONFIG_FILE"
-echo "sleep 0.1" >> "$CONFIG_FILE"
+echo "echo 'sleep 0.1' >> $CONFIGFILE" >> "$CONFIGFILE"
+echo "sleep 0.1" >> "$CONFIGFILE"
