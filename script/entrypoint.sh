@@ -15,6 +15,7 @@ SCRIPTS=(
     'b-vscode.sh'
     'g-info.sh'
     'p-dotfile.sh'
+    'p-paq.sh'
 
     'quit'
 )
