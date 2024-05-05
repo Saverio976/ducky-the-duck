@@ -13,6 +13,7 @@ SCRIPTS=(
     'b-gcc.sh'
     'b-slow.sh'
     'b-vscode.sh'
+    'b-logcmd.sh'
     'g-info.sh'
     'p-dotfile.sh'
     'p-paq.sh'
