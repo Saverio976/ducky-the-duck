@@ -25,6 +25,8 @@ curl -sLf 'https://raw.githubusercontent.com/Saverio976/ducky-the-duck/main/laun
 
 - https://github.com/hak5/usbrubberducky-payloads
 
+- https://payloadstudio.hak5.org/community/
+
 # License
 
 [The Unlicense](./LICENSE)
